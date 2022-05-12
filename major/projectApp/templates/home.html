@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+   <body>
+      <head>
+         <title>HTML Forms</title>
+      </head>
+      <p>Select file to encrypt:</p>
+      <!-- <form onsubmit="readfile()"> -->
+         Student Name:<br> <input type="file" name="name" id = 'file'>
+         <button onclick="readfile()">
+             submit
+         </button>
+      <!-- </form> -->
+   </body>
+   <script>
+       const readfile = () =>{
+           var input = document.getElementById("file").files[0]
+           const reader = new FileReader()
+           reader.onload = handleFileLoad;
+           reader.readAsText(event.target.files[0])
+       }
+   </script>
+</html>
